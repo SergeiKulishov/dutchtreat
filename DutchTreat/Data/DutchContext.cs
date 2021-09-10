@@ -26,8 +26,15 @@ namespace DutchTreat.Data
     protected override void OnConfiguring(DbContextOptionsBuilder bldr)
     {
       base.OnConfiguring(bldr);
-
-      bldr.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
+      if (OperatingSystem.IsMacOS() || OperatingSystem.IsLinux())
+      {
+          bldr.UseSqlite("Data Source=DutchTreat.db");
+      }
+      else
+      { 
+          bldr.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
+      }
+      
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 
 DutchTreat/wwwroot/lib/
+.DS_Store

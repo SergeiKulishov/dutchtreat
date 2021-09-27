@@ -349,5 +349,5 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-wwwroot/lib/
 .DS_Store
+DutchTreat/wwwroot/lib/
